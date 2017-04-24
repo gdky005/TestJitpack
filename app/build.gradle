@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion 25
@@ -30,5 +29,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
 
-    compile 'com.github.gdky005:TestJitpack:1.0.4'
+//    compile 'com.github.gdky005:TestJitpack:1.0.4'
+//    compile 'com.github.gdky005:TestJitpack:1.0.7'
+//    compile 'com.wq.gdky005:jitpack:1.0.0'
 }
