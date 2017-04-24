@@ -21,5 +21,5 @@ dependencies:
 test:
   override:
     - ./gradlew build
-  post:
-    - cp -R ./XXXXXXXX/build/apk $CIRCLE_ARTIFACTS
+#  post:
+#    - cp -R ./XXXXXXXX/build/apk $CIRCLE_ARTIFACTS
