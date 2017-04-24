@@ -5,20 +5,22 @@ machine:
       ANDROID_HOME: /usr/local/android-sdk-linux
 
 dependencies:
+  pre:
+      - mkdir -p ${ANDROID_HOME}/licenses
+      - echo $ANDROID_SDK_LICENSE > ${ANDROID_HOME}/licenses/android-sdk-license
+      - bash ./misc/download_keystore.sh
   override:
     - echo y | android update sdk --no-ui --filter "android-25"
     - echo y | android update sdk --no-ui --filter "build-tools-25.0.2"
     - echo y | android update sdk --no-ui --filter "extra-android-m2repository"
     - echo y | android update sdk --no-ui --filter "extra-android-support"
     - echo y | android update sdk --no-ui --filter "extra-google-m2repositor"
-  pre:
-    - if [ ! -d "/usr/local/android-sdk-linux/platforms/android-25" ]; then echo y | android update sdk --no-ui --all --filter "android-25"; fi
-    - if [ ! -d "/usr/local/android-sdk-linux/build-tools/25.0.2" ]; then echo y | android update sdk --no-ui --all --filter "build-tools-25.0.2"; fi
-    - if [ ! -d "/usr/local/android_sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.2" ]; then echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"; fi
-  licenses:
-          - android-sdk-license-.+
-          - '.+'
+    # we are cheating because there is a problem with constraint layout ATM
+          # see: https://code.google.com/p/android/issues/detail?id=212128
+    - ./gradlew dependencies || true
 
 test:
   override:
     - ./gradlew build
+  post:
+    - cp -R ./XXXXXXXX/build/apk $CIRCLE_ARTIFACTS
