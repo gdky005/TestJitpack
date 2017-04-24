@@ -5,5 +5,5 @@ package team.zhuoke.jitpack;
  */
 
 public class Contanst {
-    public static final String name = "wangqing_02";
+    public static final String name = "wangqing_02_gdky005";
 }
