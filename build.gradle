@@ -10,9 +10,11 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
+}
+
+plugins {
+    id "com.github.dcendents.android-maven" version "1.5"
 }
 
 allprojects {
@@ -22,6 +24,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}
