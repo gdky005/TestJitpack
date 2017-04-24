@@ -11,6 +11,14 @@ jdk:
 
 before_install:
   - chmod +x gradlew
+  #!/bin/bash
+  # fail if any commands fails
+  - set -e
+  # debug log
+  - set -x
+
+  - mkdir -p "$ANDROID_HOME/licenses"
+  - rsync -avhP ./android-licenses/ "$ANDROID_HOME/licenses/"
 
 script:
   - ./gradlew assembleRelease
