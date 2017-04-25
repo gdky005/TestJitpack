@@ -1,6 +1,6 @@
 # TestJitpack
 
-[![](https://jitpack.io/v/gdky005/TestJitpack.svg)](https://jitpack.io/#gdky005/TestJitpack) [![Build Status](https://travis-ci.org/gdky005/TestJitpack.svg?branch=master)](https://travis-ci.org/gdky005/TestJitpack)
+[![](https://jitpack.io/v/gdky005/TestJitpack.svg)](https://jitpack.io/#gdky005/TestJitpack) [![Build Status](https://travis-ci.org/gdky005/TestJitpack.svg?branch=master)](https://travis-ci.org/gdky005/TestJitpack) [![CircleCI](https://circleci.com/gh/gdky005/TestJitpack/tree/master.svg?style=svg)](https://circleci.com/gh/gdky005/TestJitpack/tree/master)
 
 # Travis CI 协议问题解决方案
 http://stackoverflow.com/questions/37615379/travis-ci-build-doesnt-work-with-android-constraint-layout
