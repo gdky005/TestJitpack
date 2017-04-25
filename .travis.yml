@@ -13,14 +13,14 @@ env:
 android:
   components:
 #    - tools # to get the new `repository-11.xml`
-#    - platform-tools
-#    - tools # to install Android SDK tools 25.1.x
+    - platform-tools
+    - tools # to install Android SDK tools 25.1.x
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
     - android-$ANDROID_API_LEVEL
 
 #    - addon-google_apis-google-$ANDROID_API_LEVEL
 #    - extra-android-support
-    - extra-android-m2repository
+#    - extra-android-m2repository
 #    - extra-google-m2repository
 
     - sys-img-armeabi-v7a-google_apis-$ANDROID_API_LEVEL
