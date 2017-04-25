@@ -2,16 +2,30 @@ language: android
 jdk: oraclejdk8
 sudo: false
 
+env:
+  matrix:
+      - ANDROID_TARGET=android-25 ANDROID_ABI=armeabi-v7a
+  global:
+      - ADB_INSTALL_TIMEOUT=8
+
 android:
   components:
     - tools
+    - platform-tools
     - build-tools-25.0.2
     - android-25
     - extra-android-m2repository
     - extra-android-support
+    - sys-img-armeabi-v7a-android-25
   licenses:
       - android-sdk-license-.+
       - '.+'
+
+before_script:
+  - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator # 该项会等待虚拟机启动成功在执行后面的命令
+  - adb shell input keyevent 82 &
 
 before_install:
   - chmod +x gradlew
@@ -20,4 +34,8 @@ before_install:
   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
 script:
+  - ./gradlew :app:createDebugAndroidTestCoverageReport --info --stacktrace
   - ./gradlew assembleRelease
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
