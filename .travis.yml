@@ -12,7 +12,7 @@ env:
 
 android:
   components:
-    - tools # to get the new `repository-11.xml`
+#    - tools # to get the new `repository-11.xml`
     - platform-tools
     - tools # to install Android SDK tools 25.1.x
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
@@ -22,10 +22,6 @@ android:
     - extra-android-m2repository
     - extra-google-m2repository
     - sys-img-armeabi-v7a-google_apis-$ANDROID_API_LEVEL
-    # Google Play Services
-    - extra-google-google_play_services
-    # Support library
-    - extra-android-support
 
   licenses:
       - android-sdk-license-.+
@@ -43,6 +39,11 @@ before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
   - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
+  - ./gradlew connectedCheck
 
 script:
-  - ./gradlew clean check connectedCheck -x library:signArchives -PdisablePreDex
+  - ./gradlew :app:createDebugAndroidTestCoverageReport --info --stacktrace
+  - ./gradlew assembleRelease
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
