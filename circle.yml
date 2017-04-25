@@ -25,5 +25,5 @@ test:
   override:
 #    - ./gradlew assembleRelease
     - ./gradlew build
-  post:
-    - cp -R ./XXXXXXXX/build/apk $CIRCLE_ARTIFACTS
+#  post:
+#    - cp -R ./XXXXXXXX/build/apk $CIRCLE_ARTIFACTS
