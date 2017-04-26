@@ -9,6 +9,8 @@ env:
       - ANDROID_ABI=armeabi-v7a
       - ANDROID_TAG=google_apis
       - ADB_INSTALL_TIMEOUT=20 # minutes (2 minutes by default)
+      - secure: "AZ05U5ueUhL3IY/G+ylySq1F1xWE+OLwNq0iT4bmcG3VJTvYNzS+gRHihTUnj6F7fQ60yCu27m4ODkoYX+xqy662VpXyvMGqd4ZDFGd9q6MI1DhBEf7p3r1MMbl6HfvPOdT5ivvMGmgFjrujLAt0x1wj4FrkYMUSZ5NR37GYIHomwLKGhzJtmprB0uD8e4y0tmDDFJt9khFuinYsd3XpHG8LnunywzSWJR99eV9AUxfbF40ivUSH4XdNrEHrrNCoWt3G2um8vMahHO7tsqxEA3YLiiEF4l3DkaZfqPK6RQF1alGqWoSmO5uF2i2sKaTbc6r59EVw83Ds//ITQP0sUBHXsT0n/NUHB5VnIoyJepMWzASXHBOem7Cb4YHZ9y7F9yMfGeJzqXht52mCqaOtipwEEnR5rtqRG/nwrs4+hwlxPChS4A6GmT/7cFFuldsKkK+LNl/A3nygAB1SmbiUO6zfZqgyAvmft3cgkx8K67T/4pajslVT0Zg8idfO4w6crx5n9TpqQkJj04YTLzONAmRI6femaPkRxau2eHdlvKkz1XFjRPpfwbaEC2fPZ6xjQw/XXe/wjsUbE7MiXjClOnUl5vjzXY9yJerhfGuMlX5KQhhLLrXwq0ttf5AeBH82jCBc/B3TyxNNbqq3kH6lSnnD3VxBVB6vDQU8O5z/9uU="
+
 
 android:
   components:
@@ -35,8 +37,19 @@ before_install:
   - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
+addons:
+  coverity_scan:
+    project:
+      name: "gdky005/TestJitpack"
+      description: "Build submitted via Travis CI"
+    notification_email: 741227905@qq.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan
+
 before_script:
   # Create and start emulator
+  - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
   - echo no | android create avd --force -n test -t "android-"$ANDROID_API_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAG
   - emulator -avd test -no-skin -no-window &
   - android-wait-for-emulator
