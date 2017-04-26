@@ -1,6 +1,6 @@
 # TestJitpack
 
-[![](https://jitpack.io/v/gdky005/TestJitpack.svg)](https://jitpack.io/#gdky005/TestJitpack) [![Build Status](https://travis-ci.org/gdky005/TestJitpack.svg?branch=master)](https://travis-ci.org/gdky005/TestJitpack) [![CircleCI](https://circleci.com/gh/gdky005/TestJitpack/tree/master.svg?style=svg)](https://circleci.com/gh/gdky005/TestJitpack/tree/master) [![codecov](https://codecov.io/gh/gdky005/TestJitpack/branch/master/graph/badge.svg)](https://codecov.io/gh/gdky005/TestJitpack)
+[![](https://jitpack.io/v/gdky005/TestJitpack.svg)](https://jitpack.io/#gdky005/TestJitpack) [![Build Status](https://travis-ci.org/gdky005/TestJitpack.svg?branch=master)](https://travis-ci.org/gdky005/TestJitpack) [![CircleCI](https://circleci.com/gh/gdky005/TestJitpack/tree/master.svg?style=svg)](https://circleci.com/gh/gdky005/TestJitpack/tree/master) [![codecov](https://codecov.io/gh/gdky005/TestJitpack/branch/master/graph/badge.svg)](https://codecov.io/gh/gdky005/TestJitpack) [![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
 
 
 # Travis CI 协议问题解决方案
