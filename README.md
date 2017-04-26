@@ -10,8 +10,9 @@
 http://stackoverflow.com/questions/37615379/travis-ci-build-doesnt-work-with-android-constraint-layout
 
 # 存档链接
-http://www.jianshu.com/p/2935b96d3059
-https://shields.io 图标制作和预览
+- http://www.jianshu.com/p/2935b96d3059
+
+- https://shields.io 图标制作和预览
 
 # Travis CI 和 Circle CI 遇到 android 协议解决办法
 
