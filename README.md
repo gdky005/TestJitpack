@@ -1,6 +1,6 @@
 # TestJitpack
 
-[![](https://jitpack.io/v/gdky005/TestJitpack.svg)](https://jitpack.io/#gdky005/TestJitpack) [![Build Status](https://travis-ci.org/gdky005/TestJitpack.svg?branch=master)](https://travis-ci.org/gdky005/TestJitpack) [![CircleCI](https://circleci.com/gh/gdky005/TestJitpack/tree/master.svg?style=svg)](https://circleci.com/gh/gdky005/TestJitpack/tree/master) [![codecov](https://codecov.io/gh/gdky005/TestJitpack/branch/master/graph/badge.svg)](https://codecov.io/gh/gdky005/TestJitpack) [![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14)
+[![](https://jitpack.io/v/gdky005/TestJitpack.svg)](https://jitpack.io/#gdky005/TestJitpack) [![Build Status](https://travis-ci.org/gdky005/TestJitpack.svg?branch=master)](https://travis-ci.org/gdky005/TestJitpack) [![CircleCI](https://circleci.com/gh/gdky005/TestJitpack/tree/master.svg?style=svg)](https://circleci.com/gh/gdky005/TestJitpack/tree/master) [![codecov](https://codecov.io/gh/gdky005/TestJitpack/branch/master/graph/badge.svg)](https://codecov.io/gh/gdky005/TestJitpack) [![API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=14) [![Coverity Scan Build Status](https://scan.coverity.com/projects/12557/badge.svg)](https://scan.coverity.com/projects/gdky005-testjitpack)
 
 
 # Travis CI 协议问题解决方案
